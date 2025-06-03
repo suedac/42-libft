@@ -6,13 +6,11 @@
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 16:51:16 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/03/25 17:04:58 by zgahrama         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:18:06 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isprint(int c)
-{
-    if(c >= 0 && c<=32)
-        return 0;
-    return 1;
+{   
+    return (c >= 32 && c <= 126);
 }

@@ -6,11 +6,12 @@
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:24:29 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/05/21 16:42:28 by zgahrama         ###   ########.fr       */
+/*   Updated: 2025/06/03 12:20:10 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void *ptr, int x, unsigned int n)
+#include "libft.h"
+void *ft_memset(void *ptr, int x, size_t n)
 {
     unsigned char *p = (unsigned char *)ptr;
     while (n > 0)

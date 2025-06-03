@@ -6,28 +6,31 @@
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 10:58:23 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/05/21 15:27:13 by zgahrama         ###   ########.fr       */
+/*   Updated: 2025/06/03 13:10:57 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strnstr(char *big, char *little, unsigned int len)
+#include "libft.h"
+char *ft_strnstr(const char *big, const char *little, size_t len)
 {
     unsigned int i;
     unsigned int j;
+    char *b = (char *)big;
+    char *l = (char *)little;
     i = 0;
-    if (*little == '\0')
-        return big;
-    while (big[i] != '\0' && i < len)
+    if (*l == '\0')
+        return b;
+    while (b[i] != '\0' && i < len)
     {
         j = 0;
-        while (big[i + j] != '\0' && little[j] != '\0' && (i + j) < len)
+        while (b[i + j] != '\0' && l[j] != '\0' && (i + j) < len)
         {
-            if (big[i + j] != little[j])
+            if (b[i + j] != l[j])
                 break;
             j++;
         }
-        if (little[j] == '\0')
-            return &big[i];
+        if (l[j] == '\0')
+            return &b[i];
 
         i++;
     }

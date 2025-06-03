@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 17:00:33 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/05/21 10:52:16 by zgahrama         ###   ########.fr       */
+/*   Created: 2025/05/27 14:49:42 by zgahrama          #+#    #+#             */
+/*   Updated: 2025/06/03 13:33:02 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src)
+#include "libft.h"
+
+char *ft_strmapi(char const *s, char (*f)(unsigned  int, char))
 {
-    int i = 0;
-    while(dest[i] != '\0')
+    unsigned int i = 0;
+    unsigned int size_s = ft_strlen(s);
+    char *map = malloc(size_s * sizeof(char) + 1);
+    if(!map)
+        return 0;
+    while(i < size_s)
     {
+        map[i] = f(i, s[i]);
         i++;
     }
-    while(*src != '\0')
-    {
-        dest[i] = *src;
-        src++;
-        i++;
-    }
-    dest[i] = '\0';
-    return dest;
+    return map;
 }

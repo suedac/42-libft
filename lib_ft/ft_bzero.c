@@ -6,11 +6,12 @@
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 13:26:28 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/05/22 13:32:20 by zgahrama         ###   ########.fr       */
+/*   Updated: 2025/06/03 12:24:42 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+void ft_bzero(void *s, size_t n)
 {
     unsigned char *s1 = (unsigned char*) s;
 
