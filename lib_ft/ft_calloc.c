@@ -6,7 +6,7 @@
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:30:42 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/05/23 17:30:43 by zgahrama         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:47:14 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void *ft_calloc(size_t nitems, size_t size)
 {
     size_t i = 0;
-    if (nitems && size && nitems > ((size_t)-1) / size)
+    if (nitems && size && nitems > SIZE_MAX / size)
         return 0;
     void *point = malloc(nitems * size);
     if (!point)

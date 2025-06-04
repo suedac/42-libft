@@ -6,7 +6,7 @@
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 09:49:47 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/06/03 15:49:58 by zgahrama         ###   ########.fr       */
+/*   Updated: 2025/06/03 16:10:32 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 static int how_many(char const *s, char c)
 {
-    int i = 1;
-    int j = 0;
-    while(s[j] != '\0')
+    int count = 0;
+    int in_word = 0;
+    while (*s)
     {
-        if(s[j] == c)
-            i++;
-        j++;
+        if (*s != c && in_word == 0)
+        {
+            count++;
+            in_word = 1;
+        }
+        else if (*s == c)
+        {
+            in_word = 0;
+        }
+        s++;
     }
-    return i;
+    return count;
 }
 static void	free_split(char **str, int current_word)
 {

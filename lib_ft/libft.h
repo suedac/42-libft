@@ -6,16 +6,13 @@
 /*   By: zgahrama <zgahrama@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 14:38:40 by zgahrama          #+#    #+#             */
-/*   Updated: 2025/06/03 13:47:03 by zgahrama         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:43:50 by zgahrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
-
-typedef unsigned long size_t;
-void *malloc(size_t size);
-void free( void *ptr);
+#include <stdlib.h>
 typedef struct s_list
 {
 void *content;
