@@ -14,18 +14,18 @@
 
 void *ft_calloc(size_t nitems, size_t size)
 {
-    void *point = malloc(size*nitems);
-    unsigned char *p2p = (unsigned char *) point;
-    int i = 0;
-    if(size == 0 || nitems == 0)
-        return point;
-    if(!point)
+    size_t i = 0;
+    if (nitems && size && nitems > ((size_t)-1) / size)
         return 0;
-    while(nitems>0)
+    void *point = malloc(nitems * size);
+    if (!point)
+        return 0;
+    size_t total = nitems * size;
+    unsigned char *p2p = (unsigned char *)point;
+    while(i < total)
     {
-        p2p[i] = 0;
-        i++;
-        nitems--;
+         p2p[i] = 0;
+         i++;
     }
     return point;
 }
